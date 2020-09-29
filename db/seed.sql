@@ -24,5 +24,6 @@ CREATE TABLE deals (
 CREATE TABLE merch (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30),
-    img TEXT
+    img TEXT,
+    price NUMERIC
     );
