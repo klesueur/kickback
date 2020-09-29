@@ -2,8 +2,10 @@ require('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
-const authCtrl = require('./authController') //will hold all 3 endpoints: authControllers, dealsController, merchController
-const verifyUser = require('./middlewares/verifyUser') //middleware for later?
+const authCtrl = require('./authController') 
+const dealsCtrl = require('./dealsController')
+const merchCtrl = require('./merchController')
+const verifyUser = require('./middlewares/verifyUser') 
 
 const app = express()
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
@@ -26,7 +28,9 @@ app.delete('/auth/logout', authCtrl.logout)
 app.get('/auth/user', authCtrl.getUser)
 
 //#deals endpoints below
-app.get('/api/deals', )
+app.get('/api/deals', verifyUser, dealsCtrl.getDeals)
+app.post('/api/deals', verifyUser, dealsCtrl.addDeal)
+app.put('/api/deals/:deal_id', verifyUser, dealsCtrl.editDeal)
 
 //#merch endpoints below
 
