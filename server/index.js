@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
-const controller = require('./controller') //will hold all 3 endpoints: authControllers, dealsController, merchController
+const authCtrl = require('./authController') //will hold all 3 endpoints: authControllers, dealsController, merchController
 const verifyUser = require('./middlewares/verifyUser') //middleware for later?
 
 const app = express()
@@ -20,9 +20,15 @@ app.use(
 
 
 //#auth endpoints below
-
+app.post('/auth/register', authCtrl.register)
+app.post('/auth/login', authCtrl.login)
+app.delete('/auth/logout', authCtrl.logout)
+app.get('/auth/user', authCtrl.getUser)
 
 //#deals endpoints below
+app.get('/api/deals', )
+
+//#merch endpoints below
 
 
 massive({
