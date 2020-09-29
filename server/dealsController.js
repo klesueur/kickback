@@ -37,7 +37,23 @@ module.exports = {
         //Get deal_id from params
         const { deal_id } = req.params
         //Save updated deal
-        await
+        await db.edit_deal([purchase_total, deal_id])
+        //Send array of posts
+        const posts = await getAllPosts(db)
+        res.status(200).send(posts)
+
+    },
+
+    deleteDeal: async (req, res) => {
+
+        const db = req.app.get('db')
+        //Get deal_id from params
+        const { deal_id } = req.params
+        //Delete deal
+        await db.delete_deal([deal_id])
+        //Send back updated array
+        const deals = await getAllDeals(db)
+        res.status(200).send(deals)
 
     }
 

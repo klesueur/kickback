@@ -1,2 +1,2 @@
 DELETE FROM deals
-WHERE id = $1;
+WHERE deal_id = $1;

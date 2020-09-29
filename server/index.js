@@ -31,6 +31,7 @@ app.get('/auth/user', authCtrl.getUser)
 app.get('/api/deals', verifyUser, dealsCtrl.getDeals)
 app.post('/api/deals', verifyUser, dealsCtrl.addDeal)
 app.put('/api/deals/:deal_id', verifyUser, dealsCtrl.editDeal)
+app.delete('/api/deals/:deal_id', verifyUser, dealsCtrl.deleteDeal)
 
 //#merch endpoints below
 
