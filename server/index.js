@@ -34,6 +34,8 @@ app.put('/api/deals/:deal_id', verifyUser, dealsCtrl.editDeal)
 app.delete('/api/deals/:deal_id', verifyUser, dealsCtrl.deleteDeal)
 
 //#merch endpoints below
+app.get('/api/merch', merchCtrl.getMerch)
+app.get('/api/merch/:id', merchCtrl.getProduct)
 
 
 massive({

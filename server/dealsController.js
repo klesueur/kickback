@@ -25,7 +25,7 @@ module.exports = {
         await db.add_deal([lease_id, customer_first, customer_last, purchase_total, month, rep_id])
         //Send array of deals
         const deals = await getAllDeals(db)
-        res.status(200).send(posts)
+        res.status(200).send(deals)
 
     },
 
@@ -38,8 +38,8 @@ module.exports = {
         const { deal_id } = req.params
         //Save updated deal
         await db.edit_deal([purchase_total, deal_id])
-        //Send array of posts
-        const posts = await getAllPosts(db)
+        //Send array of deals
+        const deals = await getAllDeals(db)
         res.status(200).send(posts)
 
     },
