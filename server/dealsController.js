@@ -1,5 +1,6 @@
-const getAllDeals = async (db) => {
-    const deals = await db.get_deals()
+const getAllDeals = async (db, id) => {
+    
+    const deals = await db.get_deals(id)
     return deals
 }
 
@@ -8,7 +9,9 @@ module.exports = {
     getDeals: async (req, res) => {
 
         const db = req.app.get('db')
-        const deals = await getAllDeals(db)
+        const { id } = req.session.user
+        
+        const deals = await getAllDeals(db, id)
         res.status(200).send(deals)
 
     }, 
@@ -22,9 +25,9 @@ module.exports = {
         //Ask about destructing below if this is the info that needs to be added 
         const { lease_id, customer_first, customer_last, purchase_total, month } = req.body
         //Save deal to db
-        await db.add_deal([lease_id, customer_first, customer_last, purchase_total, month, rep_id])
+        await db.add_deal([lease_id, customer_first, customer_last, purchase_total, month, id])
         //Send array of deals
-        const deals = await getAllDeals(db)
+        const deals = await db.get_deals(id)
         res.status(200).send(deals)
 
     },
