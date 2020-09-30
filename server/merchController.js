@@ -3,6 +3,8 @@ const getAllProduct = async (db) => {
     return product
 }
 
+
+
 module.exports = {
 
     getMerch: async (req, res) => {
@@ -13,16 +15,26 @@ module.exports = {
 
     },
 
-    getProduct: async (req, res) => {
+    addToCart: async (req, res) => {
 
         const db = req.app.get('db')
         const { id } = req.params
-        await db.get_product([id])
+        const [product] = await db.get_product([id])
+
+        req.session.cart = []
+        req.session.cart.push(product)
+        res.status(200).send(req.session.cart)
+        
         //Ask about this function as well as below
-        const product = await getAllProduct(db)
-        res.status(200).send(product)
+        // const product = await getAllProduct(db)
+        // res.status(200).send(product)
+
+    },
+    
+    getCart: async (req, res) => {
 
 
-    }
+
+    },
 
 }
