@@ -13,8 +13,10 @@ function Login(props) {
         <div>
             <h1> kickback </h1>
             <div>
-                <input value={email} onChange={(e) => {setEmail(e.target.value)}} />
-                <input type='password' value={password} onChange={(e) => {setPassword(e.target.value)}} />
+                <input placeholder={'Email'} value={email} 
+                onChange={(e) => {setEmail(e.target.value)}} />
+                <input placeholder={'Password'} type='password' value={password} 
+                onChange={(e) => {setPassword(e.target.value)}} />
             </div>
             <div>
                 <button onClick={ () => {

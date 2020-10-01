@@ -17,13 +17,18 @@ function Register(props) {
         <div>
             <h1> register </h1>
             <div>
-                <input value={first} onChange={(e) => {setFirst(e.target.value)}} />
-                <input value={last} onChange={(e) => {setLast(e.target.value)}} />
-                <input value={company} onChange={(e) => {setCompany(e.target.value)}} />
+                <input placeholder={'First Name'} value={first} 
+                onChange={(e) => {setFirst(e.target.value)}} />
+                <input placeholder={'Last Name'} value={last} 
+                onChange={(e) => {setLast(e.target.value)}} />
+                <input placeholder={'Company'} value={company} 
+                onChange={(e) => {setCompany(e.target.value)}} />
             </div>
             <div>
-                <input value={email} onChange={(e) => {setEmail(e.target.value)}} />
-                <input type='password' value={password} onChange={(e) => {setPassword(e.target.value)}} />
+                <input placeholder={'Email'} value={email} 
+                onChange={(e) => {setEmail(e.target.value)}} />
+                <input placeholder={'Password'} type='password' value={password} 
+                onChange={(e) => {setPassword(e.target.value)}} />
             </div>
             <div>
                 <button onClick={ () => {
