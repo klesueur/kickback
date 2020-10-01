@@ -20,8 +20,7 @@ function Login(props) {
             </div>
             <div>
                 <button onClick={ () => {
-                    axios.post('/auth/login', {email, password}).
-                    then((res) => {
+                    axios.post('/auth/login', {email, password}).then((res) => {
                         props.setUser(res.data)
                         history.push('/dashboard')
                     })

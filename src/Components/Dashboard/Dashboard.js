@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {connect} from 'react-redux'
 import {logoutUser} from '../../ducks/authReducer'
 import Deals from './Deals'
 import Header from '../Header'
-import routes from '../../routes'
+
 
 function Dashboard(props) {
-    console.log(props.user)
+    console.log('dashboard props.user', props.user)
+
+        // const [spiff, setSpiff] = useState(0)
+        // useEffect(() => {
+        //     setSpiff(props.user.spiff)
+        // }, [props.user.spiff])
+
+        
+
+
     return (
         <div>
             
@@ -14,9 +23,14 @@ function Dashboard(props) {
 
             <h1> Dashboard </h1>
 
-    <h2>Your total spiff kickback: ${props.user && props.user.spiff}</h2>
-    
-            {/* <button onClick={ () => {props.history.push('/')} }> Auth Button </button> */}
+            
+            <div>
+               <h2>Your total spiff kickback:</h2> 
+               <div>
+                   
+                   ${props.user && props.user.spiff}
+               </div>
+            </div>
             
 
             <div>

@@ -49,10 +49,13 @@ module.exports = {
 
     },
 
-    getUser: (req, res) => {
+    getUser: async (req, res) => {
         //Get user from session
+        const db = req.app.get('db')
 
         if (req.session.user) {
+            const [user] = await db.check_user(req.session.user.email)
+            req.session.user = user
             res.status(200).send(req.session.user)
         } else {
             res.status(404).send('No session found')

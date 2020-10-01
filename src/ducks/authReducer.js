@@ -23,6 +23,7 @@ export default function (state = initialState, action) {
     const {type, payload} = action
     switch (type) {
         case SET_USER:
+            console.log(payload)
             return {...state, user: payload}
         case LOGOUT_USER:
             return {...state, user: payload}
