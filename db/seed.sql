@@ -8,7 +8,8 @@ CREATE TABLE users (
     first VARCHAR(50),
     last VARCHAR(50),
     company VARCHAR(50),
-    password TEXT 
+    password TEXT,
+    spiff INTEGER default 0
 );
 
 CREATE TABLE deals (

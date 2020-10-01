@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import {setUser} from '../../ducks/authReducer'
+import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
 function Register(props) {
 
@@ -9,6 +11,7 @@ function Register(props) {
     const [first, setFirst] = useState('')
     const [last, setLast] = useState('')
     const [company, setCompany] = useState('')
+    const history = useHistory()
 
     return (
         <div>
@@ -23,7 +26,15 @@ function Register(props) {
                 <input type='password' value={password} onChange={(e) => {setPassword(e.target.value)}} />
             </div>
             <div>
-                <button> submit! </button>
+                <button onClick={ () => {
+                    axios.post('/auth/register', { email, first, last, company, password }).then((res) => {
+                        props.setUser(res.data)
+                        history.push('/Dashboard')                   
+                    }).catch((err) => {console.log(err)})
+                    //toast in ref code in past project
+
+                } }> submit! </button>
+                {/* //toast about email already being taken */}
                 
             </div>
         </div>

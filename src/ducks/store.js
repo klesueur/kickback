@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux' 
 import promiseMiddleware from 'redux-promise-middleware'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import authReducer from './authReducer' 
 
 const rootReducer = combineReducers({
@@ -7,5 +8,5 @@ const rootReducer = combineReducers({
 })
 
 export default createStore(
-    rootReducer, applyMiddleware(promiseMiddleware)
+    rootReducer, composeWithDevTools(applyMiddleware(promiseMiddleware))
 )

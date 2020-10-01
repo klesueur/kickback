@@ -35,9 +35,12 @@ app.delete('/api/deals/:deal_id', verifyUser, dealsCtrl.deleteDeal)
 
 //#merch endpoints below
 app.get('/api/merch', merchCtrl.getMerch)
+
 //#cart endpoints below (still part of merchController)
-app.get('/api/cart', merchCtrl.getCart) 
-app.post('/api/cart', merchCtrl.addToCart)
+//CODING CART ON FRONT END FOR PROJECT. NEED BELOW ENDPOINTS IN FUTURE WHEN APP IS LIVE. 
+//commented out getCart() in merchController
+// app.get('/api/cart', merchCtrl.getCart) 
+// app.post('/api/cart', merchCtrl.addToCart)
 
 
 
