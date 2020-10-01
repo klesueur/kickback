@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import {} from '../../ducks/dealsReducer'
+import {setDeals} from '../../ducks/dealsReducer'
+import axios from 'axios'
 
 function Deals(props) {
 
@@ -30,13 +31,20 @@ function Deals(props) {
                 <input placeholder='Purchase Total'
                 value={purchaseTotal}
                 onChange={(e) => {setPurchaseTotal(e.target.value)}} />
-                {/* /* month drop */}
-                <button>Add New Deal</button>
+                {/* MONTH DROPDOWN HERE */}
+                <button onClick={ () => {
+                    // ADD INPUT FIELD BELOW ONCE CREATED
+                    axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal}).then(
+                        (res) => {
+                            props.setDeals(res.data)
+                        }
+                    ).catch((err) => {console.log(err)})
+                }}> Add New Deal </button>
             </div>
 
         </div>
     )
 }
 
-const mapStateToProps = (reduxState) => reduxState.dealsReducer
-export default connect(mapStateToProps)(Deals)
+const mapStateToProps = (reduxState) => reduxState
+export default connect(mapStateToProps, {setDeals})(Deals)
