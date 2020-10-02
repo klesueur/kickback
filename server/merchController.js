@@ -4,7 +4,6 @@ const getAllProduct = async (db) => {
 }
 
 
-
 module.exports = {
 
     getMerch: async (req, res) => {
