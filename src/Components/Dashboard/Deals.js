@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { connect } from 'react-redux'
-import {setDeals} from '../../ducks/dealsReducer'
+import {connect} from 'react-redux'
 import axios from 'axios'
+import {setDeals} from '../../ducks/dealsReducer'
 import {setUser} from '../../ducks/authReducer'
 
 function Deals(props) {
