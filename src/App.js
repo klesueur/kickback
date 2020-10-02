@@ -1,6 +1,6 @@
 import React from 'react'
-import './App.css'
 import './reset.css'
+import './App.css'
 import {connect} from 'react-redux'
 import {setUser} from './ducks/authReducer'
 import routes from './routes'

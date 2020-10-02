@@ -1,0 +1,60 @@
+.auth-view {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to left, #949494 0%, #8a8a8a 50%, #686868 100%);
+    
+  }
+  
+  .login-box {
+    height: 35vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: #6bfed9;
+    box-shadow: rgba(255, 255, 255, 0.863) 0 0 30px;
+    border-radius: 15px;
+  }
+  
+  .login-content {
+    height: 27vh;
+    width: 41vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .login-inputs-buttons {
+    display: flex;
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .login-inputs {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .login-email-box {
+    height: 45px;
+  }
+  
+  .login-password-box {
+    height: 45px;
+  }
+  
+  .login-buttons {
+    display: flex;
+    flex-direction: column;
+  }

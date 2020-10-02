@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './Auth.css'
 import { connect } from 'react-redux'
 import {setUser} from '../../ducks/authReducer'
 import axios from 'axios'
