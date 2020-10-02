@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {logoutUser} from '../../ducks/authReducer'
 import Deals from './Deals'

@@ -12,17 +12,11 @@ function Auth(props) {
 // console.log(props)
     return (
         <div>
-            <h1> AUTH </h1>
-            
-    {/* {props.user ? <h1>Hello, {props.user.first}</h1> : <h2> Please login </h2>} 
-            <button onClick={ () => {props.history.push('/Dashboard')} }> Dashboard </button>
-            <button onClick={ () => {
-                props.setUser({email: 'someemail@mail.com', first: 'Fernando'})
-                props.history.push('/Dashboard')
-                }}> Login </button>
-            <button onClick={ () => {props.logoutUser()}}> Logout </button> */}
-
-            {isRegistered ? <Register /> : <Login setIsRegistered={setIsRegistered} />}
+            <div className='auth-view'>
+                <div className='login-box'>
+                    {isRegistered ? <Register /> : <Login setIsRegistered={setIsRegistered} />}
+                </div>
+            </div>
         </div>
     )
 }
