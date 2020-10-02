@@ -8,6 +8,7 @@ import MerchItem from './MerchItem'
 function AllMerch() {
 
     const [allMerch, setAllMerch] = useState([])
+    const [cartItems, setCartItems] = useState([])
 
     useEffect( () => {
         axios.get('/api/merch').then((res) => {
@@ -22,9 +23,11 @@ function AllMerch() {
             mapped all merch
             {allMerch.map((merch) => {
                 return <p>
-                   <MerchItem key={merch.id} data={merch} />
+                   <MerchItem key={merch.id} 
+                   data={merch} />
                 </p>
             })}
+
         </div>
     )
 }

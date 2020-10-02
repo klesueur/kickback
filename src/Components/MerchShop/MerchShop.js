@@ -7,6 +7,7 @@ import AllMerch from './AllMerch'
 import Cart from './Cart'
 
 function MerchShop(props) {
+    
 
     return (
         <div>
@@ -15,6 +16,7 @@ function MerchShop(props) {
             <div className='merch-shop'>
                 MERCH SHOP
                 <AllMerch />
+                <Cart />
             </div>
             
         </div>
