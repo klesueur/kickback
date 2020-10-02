@@ -1,4 +1,5 @@
 import React from 'react'
+import './Header.css'
 import {connect} from 'react-redux'
 import {setUser, logoutUser} from '../ducks/authReducer'
 import {withRouter} from 'react-router-dom'
@@ -7,7 +8,7 @@ import {withRouter} from 'react-router-dom'
 function Header(props) {
 
     return (
-        <div>
+        <div className='header'>
             header
             
             <div>
