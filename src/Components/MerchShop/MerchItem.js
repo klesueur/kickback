@@ -5,7 +5,7 @@ import AllMerch from './AllMerch'
 function MerchItem(props) {
 
 
-    render() 
+    render()
 
         return (
 

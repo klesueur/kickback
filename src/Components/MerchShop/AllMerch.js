@@ -1,20 +1,20 @@
-import axios from 'axios'
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import {connect} from 'react-redux'
 import MerchItem from './MerchItem'
 
 
 
-function AllMerch() {
+function AllMerch(props) {
 
     const [allMerch, setAllMerch] = useState([])
-    const [cartItems, setCartItems] = useState([])
 
     useEffect( () => {
         axios.get('/api/merch').then((res) => {
             setAllMerch(res.data)
         })
     }, [])
+    
     
 
     return (
@@ -23,11 +23,9 @@ function AllMerch() {
             mapped all merch
             {allMerch.map((merch) => {
                 return <p>
-                   <MerchItem key={merch.id} 
-                   data={merch} />
+                   <MerchItem key={merch.id} data={merch} />
                 </p>
             })}
-
         </div>
     )
 }

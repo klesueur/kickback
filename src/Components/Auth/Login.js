@@ -12,29 +12,29 @@ function Login(props) {
 
     return (
         <div className='login-content'>
-            <div> kickback </div>
+            <div> k i c k b a c k </div>
             <div className='login-inputs-buttons'>
                 <div className='login-inputs'>
             
-                    <input className='login-email-box' placeholder={'Email'} value={email}
+                    <input className='login-email-box' placeholder={' e m a i l '} value={email}
                     onChange={(e) => {setEmail(e.target.value)}} />
 
-                    <input className='login-password-box' placeholder={'Password'} type='password' value={password}
+                    <input className='login-password-box' placeholder={' p a s s w o r d '} type='password' value={password}
                     onChange={(e) => {setPassword(e.target.value)}} />
 
                  </div>
 
                  <div className='login-buttons'>
 
-                    <button onClick={ () => {
+                    <button className='login-button' onClick={ () => {
                     axios.post('/auth/login', {email, password}).then((res) => {
                     props.setUser(res.data)
                     history.push('/dashboard')
                     })
             
-                    } }> login </button>
+                    } }> l o g i n </button>
 
-                    <button onClick={ () => {props.setIsRegistered(true)}}> register </button>
+                    <button className='register-button' onClick={ () => {props.setIsRegistered(true)}}> r e g i s t e r </button>
 
                  </div>
             </div>
