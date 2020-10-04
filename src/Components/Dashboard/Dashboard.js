@@ -1,5 +1,6 @@
 // import React, { useEffect, useState } from 'react'
 import React from 'react'
+import './Dashboard.css'
 import {connect} from 'react-redux'
 import {logoutUser} from '../../ducks/authReducer'
 import Deals from './Deals'
@@ -22,20 +23,28 @@ function Dashboard(props) {
             
             <Header />
 
-            <h1> Dashboard </h1>
-
+            <div className='dashboard'>
+                <div className='dashboard-left'>
             
-            <div>
-               <h2>Your total spiff kickback:</h2> 
-               <div>
-                   
-                   ${props.user && props.user.spiff}
-               </div>
-            </div>
-            
+                    <div className='spiff-display'>
+                        <p className='spiff-message'> total spiff kickback: </p>
+                        <p className='spiff-total'> ${props.user && props.user.spiff} </p>
+                    </div>
+                    
+                    <div className='countdown-display'>
+                        22 Days Left
+                    </div>
 
-            <div>
-                <Deals />
+                    <div className='chartjs-display'>
+                        ChartJS graph
+                    </div>
+
+                </div>
+                        
+                <div className='dashboard-right-deals'>
+                    <Deals />
+                </div>  
+
             </div>
         </div>
     )

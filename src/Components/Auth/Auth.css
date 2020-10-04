@@ -15,9 +15,12 @@
     font-size: 64px;
     letter-spacing: 0.2em;
     font-family: "Gill Sans", sans-serif;
+    /* -webkit-text-shadow-width: 1px;
+    -webkit-text-shadow-color: rgb(255, 255, 255); */
     background: -webkit-linear-gradient(#ffe600, #f57e0e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      
   }
   
   .login-box {
@@ -26,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #6bfed9;
+    background: #38ffde;
     box-shadow: 0 0 30px 10px white;
     border-radius: 75px 3px 75px 2px;
   }

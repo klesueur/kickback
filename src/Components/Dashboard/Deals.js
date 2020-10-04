@@ -30,31 +30,39 @@ console.log('Deals props', props)
 
             <div>
                 <input placeholder='Lease ID'
-                value={leaseId} 
-                onChange={(e) => {setLeaseId(e.target.value)}} />
+                    value={leaseId} 
+                    onChange={(e) => {setLeaseId(e.target.value)}} />
                 <input placeholder="Customer's First Name" 
-                value={custFirst} 
-                onChange={(e) => {setCustFirst(e.target.value)}}
+                    value={custFirst} 
+                    onChange={(e) => {setCustFirst(e.target.value)}}
                  />
                 <input placeholder="Customer's Last Name"
-                value={custLast}
-                onChange={(e) => {setCustLast(e.target.value)}} />
-                <input placeholder='Purchase Total'
-                value={purchaseTotal}
-                onChange={(e) => {setPurchaseTotal(e.target.value)}} />
-                {/* MONTH DROPDOWN HERE */}
-                <button onClick={ () => {
+                    value={custLast}
+                    onChange={(e) => {setCustLast(e.target.value)}} />
                 
-                    // ADD INPUT FIELD BELOW ONCE CREATED
-                    axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal}).then(
+                
+                
+                <div>
+                    <input placeholder='Purchase Total'
+                        value={purchaseTotal}
+                        onChange={(e) => {setPurchaseTotal(e.target.value)}} />
+                        {/* MONTH DROPDOWN HERE */}
+                    <button onClick={ () => {
+                    
+                        // ADD INPUT FIELD BELOW ONCE CREATED
+                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal}).then(
                         (res) => {
-                            props.setDeals(res.data)
-                            axios.get('/auth/user').then((res) => {
-                                props.setUser(res.data)
-                            })
+                        props.setDeals(res.data)
+                        axios.get('/auth/user').then((res) => {
+                        props.setUser(res.data)
+                        })
                         }
-                    ).catch((err) => {console.log(err)})
-                }}> Add New Deal </button>
+                        ).catch((err) => {console.log(err)})
+                    }}> Add New Deal </button>
+                </div>
+
+
+
             </div>
 
         </div>

@@ -1,0 +1,95 @@
+.dashboard {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(99, 99, 99);
+    display: flex;
+    justify-content: space-around;
+}
+
+.dashboard-left {
+    height: 85vh;
+    width: 40vh;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.spiff-display {
+    height: 275px;
+    background-color: #1b1b1b;
+    border: 6px solid #3effdf;
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+               "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 13.5px;
+}
+
+.spiff-message {
+    color: #3effdf;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.spiff-total {
+    color: #ff8b1e;
+    font-size: 57px;
+    margin-bottom: 55px;
+}
+
+
+
+.countdown-display {
+    border: 6px solid #3effdf;
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+               "Helvetica Neue", sans-serif;
+    background-color: #1b1b1b;
+    color: #3effdf;
+    font-size: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.chartjs-display {
+    border: 6px solid #3effdf;
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+               "Helvetica Neue", sans-serif;
+    background-color: #1b1b1b;
+    color: #3effdf;
+    font-size: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 85px;
+    margin-bottom: 13.5px;
+}
+
+
+.dashboard-right-deals {
+    /* //need to put this in Deals.css */
+    height: 70vh;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 6px solid #3effdf;
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+               "Helvetica Neue", sans-serif;
+    background-color: #1b1b1b;
+    color: #3effdf;
+    margin-top: 13.5px;
+}

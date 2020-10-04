@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {setUser} from '../../ducks/authReducer'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
+// import { ToastContainer, toast } from 'react-toastify'
 
 function Register(props) {
 
