@@ -18,20 +18,20 @@ function Header(props) {
                 <div className='kickback-and-nav'>
                         <p className='dash-kickback'>kickback</p>
                     <div className='nav-buttons'>
-                        <button className='dashboard-button'
-                        onClick={() => {props.history.push('/dashboard')}}> Dashboard </button>
-                        <button className='merchstore-button'
-                        onClick={() => {props.history.push('/merchstore')}}> Merch Store </button>
+                        <a className='dashboard-button'
+                        onClick={() => {props.history.push('/dashboard')}}> Dashboard </a>
+                        <a className='merchstore-button'
+                        onClick={() => {props.history.push('/merchstore')}}> Merch Store </a>
                     </div>
                 </div>
           
                 <div className='greeting-and-logout'>
                     <p className='greeting'> Hello, {props.user && props.user.first}</p>
-                    <button className='logout-button'
+                    <a className='logout-button'
                         onClick={ () => { 
                         props.logoutUser()
                         props.history.push('/')
-                    }}> Logout </button>
+                    }}> Logout </a>
                 </div>
             </div>
         </div>

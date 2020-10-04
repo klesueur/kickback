@@ -33,7 +33,7 @@
     align-content: center;
     font-size: 64px;
     letter-spacing: 0.2em;
-    font-family: 'Josefin Sans SemiBold';
+    font-family: "Gill Sans", sans-serif;
     background: -webkit-linear-gradient(#ffe600, #f57e0e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -52,6 +52,7 @@
     border: none;
     color: #4b4b4b;
     background-color: transparent;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .merchstore-button {  
@@ -61,22 +62,41 @@
     border: none;  
     color: #4b4b4b;
     background-color: transparent;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .greeting-and-logout {
+    height: 11vh;
+    width: 32vw;
     margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	align-items: flex-end;
 }
 
 .greeting {
     color: #4b4b4b;
     font-size: 32px;
     letter-spacing: 0.2em;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .logout-button {
     font-size: 25px;
+    margin-bottom: 1.9px;
     letter-spacing: 0.2em;
     border: none;
     color: #4b4b4b;
     background-color: transparent;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a:hover { 
+    /* color: #e29a0f; */
+    color: #747474;
+    transition-duration: .2s;
+      -webkit-transition-duration: .2s;
+      -moz-transition-duration: .2s;
+    cursor: pointer;
 }
