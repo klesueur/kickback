@@ -9,14 +9,7 @@
 .logo {
     height: 15vh;
     width: 15vw;
-    background-image: linear-gradient(to top left,#3fffcf 0%, #6bfed9 50%, #f57e0e 100%);
-}
-
-.kickback-and-nav {
-    margin-left: 37px;
-    display: flex;
-    justify-content: space-around;
-	align-items: center;
+    background-image: linear-gradient(to top left,#edfdfa 0%,  #85ffe1 50%,  #38ffcd 100%);
 }
 
 .header-content {
@@ -26,17 +19,48 @@
     align-items: center;
 }
 
+.kickback-and-nav {
+    height: 15vh;
+    margin-left: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	align-items: baseline;
+}
+
 .dash-kickback {
     display: flex;
-    justify-content: center;
     align-content: center;
     font-size: 64px;
     letter-spacing: 0.2em;
     font-family: "Gill Sans", sans-serif;
-    background: -webkit-linear-gradient(#d2fff4, #6bfed9);
+    background: -webkit-linear-gradient(#ffe600, #f57e0e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     
+}
+
+.nav-buttons {
+    width: 500px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.dashboard-button {
+    font-size: 25px;
+    letter-spacing: 0.2em;
+    border: none;
+    color: #4b4b4b;
+    background-color: transparent;
+}
+
+.merchstore-button {  
+    font-size: 25px;
+    letter-spacing: 0.2em;
+    margin-left: 42px;
+    border: none;  
+    color: #4b4b4b;
+    background-color: transparent;
 }
 
 .greeting-and-logout {
@@ -44,7 +68,11 @@
 }
 
 .greeting {
-    color: rgb(85, 85, 85);
+    color: #4b4b4b;
     font-size: 32px;
     letter-spacing: 0.2em;
+}
+
+.logout-button {
+
 }
