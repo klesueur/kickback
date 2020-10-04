@@ -9,7 +9,21 @@
 .logo {
     height: 15vh;
     width: 15vw;
-    background-image: linear-gradient(to top left, #ffee00 0%, #e29912 50%, #f57e0e 100%);
+    background-image: linear-gradient(to top left,#3fffcf 0%, #6bfed9 50%, #f57e0e 100%);
+}
+
+.kickback-and-nav {
+    margin-left: 37px;
+    display: flex;
+    justify-content: space-around;
+	align-items: center;
+}
+
+.header-content {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .dash-kickback {
@@ -25,6 +39,9 @@
     
 }
 
+.greeting-and-logout {
+    margin-right: 40px;
+}
 
 .greeting {
     color: rgb(85, 85, 85);
