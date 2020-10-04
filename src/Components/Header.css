@@ -33,7 +33,7 @@
     align-content: center;
     font-size: 64px;
     letter-spacing: 0.2em;
-    font-family: "Gill Sans", sans-serif;
+    font-family: 'Josefin Sans SemiBold';
     background: -webkit-linear-gradient(#ffe600, #f57e0e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -57,7 +57,7 @@
 .merchstore-button {  
     font-size: 25px;
     letter-spacing: 0.2em;
-    margin-left: 42px;
+    margin-left: 38px;
     border: none;  
     color: #4b4b4b;
     background-color: transparent;
@@ -74,5 +74,9 @@
 }
 
 .logout-button {
-
+    font-size: 25px;
+    letter-spacing: 0.2em;
+    border: none;
+    color: #4b4b4b;
+    background-color: transparent;
 }
