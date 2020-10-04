@@ -16,9 +16,10 @@ function Register(props) {
 
     return (
         <div>
-            <h1> register </h1>
+            
 
-            <div>
+            <div className='register-content'>
+            <p className='register'> register </p>
                 <div>
                     <input className='register-first'
                     placeholder={'first name'} value={first} 

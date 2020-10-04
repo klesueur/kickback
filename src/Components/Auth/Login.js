@@ -12,7 +12,7 @@ function Login(props) {
 
     return (
         <div className='login-content'>
-            <div> k i c k b a c k </div>
+            <div className='kickback'> kickback </div>
             <div className='login-inputs-buttons'>
                 <div className='login-inputs'>
             
