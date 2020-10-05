@@ -33,6 +33,10 @@ app.post('/api/deals', verifyUser, dealsCtrl.addDeal)
 app.put('/api/deals/:deal_id', verifyUser, dealsCtrl.editDeal)
 app.delete('/api/deals/:deal_id', verifyUser, dealsCtrl.deleteDeal)
 
+//#graph endpoint below
+app.get('/api/month', )
+
+
 //#merch endpoints below
 app.get('/api/merch', merchCtrl.getMerch)
 

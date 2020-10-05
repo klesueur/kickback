@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {logoutUser} from '../../ducks/authReducer'
 import Deals from './Deals'
 import Header from '../Header'
+// import Graph from './Graph'
 
 
 function Dashboard(props) {
@@ -36,7 +37,8 @@ function Dashboard(props) {
                     </div>
 
                     <div className='chartjs-display'>
-                        ChartJS graph
+                        {/* <Graph /> */}
+                        graph here
                     </div>
 
                 </div>

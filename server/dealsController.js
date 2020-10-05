@@ -59,6 +59,16 @@ module.exports = {
         const deals = await getAllDeals(db)
         res.status(200).send(deals)
 
+    },
+
+    getByMonth: async (req, res) => {
+
+        const db = req.app.get('db')
+        const { id } = req.session.user
+        const { month } = req.query
+        const deals = await db.get_by_month(id, month)
+        res.status(200).send(deals)
+
     }
 
 }
