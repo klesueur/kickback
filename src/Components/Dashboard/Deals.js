@@ -19,7 +19,7 @@ function Deals(props) {
 console.log('Deals props', props)
     return(
         <div>
-            <div>
+            <div className='deals-display'>
                 list
                 map
                 { props.dealsReducer.deals.map( (deal) => {
@@ -28,7 +28,8 @@ console.log('Deals props', props)
                 }) }
             </div>
 
-            <div>
+            <div className='deals-form'>
+                
                 <input placeholder='Lease ID'
                     value={leaseId} 
                     onChange={(e) => {setLeaseId(e.target.value)}} />
@@ -46,7 +47,22 @@ console.log('Deals props', props)
                     <input placeholder='Purchase Total'
                         value={purchaseTotal}
                         onChange={(e) => {setPurchaseTotal(e.target.value)}} />
-                        {/* MONTH DROPDOWN HERE */}
+                    <label for='month'></label>
+                    <select name='month' id='month'>
+                        <option>month...</option>
+                        <option value='January'>january</option>
+                        <option value='Febuary'>febuary</option>
+                        <option value='March'>march</option>
+                        <option value='April'>april</option>
+                        <option value='May'>may</option>
+                        <option value='June'>june</option>
+                        <option value='July'>july</option>
+                        <option value='August'>august</option>
+                        <option value='September'>september</option>
+                        <option value='October'>october</option>
+                        <option value='November'>november</option>
+                        <option value='December'>december</option>
+                    </select>
                     <button onClick={ () => {
                     
                         // ADD INPUT FIELD BELOW ONCE CREATED

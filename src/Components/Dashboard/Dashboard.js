@@ -5,19 +5,12 @@ import {connect} from 'react-redux'
 import {logoutUser} from '../../ducks/authReducer'
 import Deals from './Deals'
 import Header from '../Header'
-// import Graph from './Graph'
+import Graph from './Graph'
+
 
 
 function Dashboard(props) {
     console.log('dashboard props.user', props.user)
-
-        // const [spiff, setSpiff] = useState(0)
-        // useEffect(() => {
-        //     setSpiff(props.user.spiff)
-        // }, [props.user.spiff])
-
-        
-
 
     return (
         <div>
@@ -37,13 +30,12 @@ function Dashboard(props) {
                     </div>
 
                     <div className='chartjs-display'>
-                        {/* <Graph /> */}
-                        graph here
+                        <Graph />
                     </div>
 
                 </div>
                         
-                <div className='dashboard-right-deals'>
+                <div className='dashboard-deals'>
                     <Deals />
                 </div>  
 
