@@ -64,10 +64,18 @@ module.exports = {
     getByMonth: async (req, res) => {
 
         const db = req.app.get('db')
+        
         const { id } = req.session.user
-        const { month } = req.query
-        const deals = await db.get_by_month(id, month)
-        res.status(200).send(deals)
+        console.log(id)
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] 
+        const result = months.map( async month => {
+            let count = await db.get_by_month([month, id])
+            console.log(count)
+            return count
+        })
+        console.log(result)
+        // const deals = await db.get_by_month(month, id)
+        res.status(200).send(result)
 
     }
 

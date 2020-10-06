@@ -10,6 +10,7 @@ function Deals(props) {
     const [custFirst, setCustFirst] = useState('')
     const [custLast, setCustLast] = useState('')
     const [purchaseTotal, setPurchaseTotal] = useState('')
+    const [month, setMonth] = useState('')
 
     useEffect( () => {
         axios.get('/api/deals').then((res) => {props.setDeals(res.data)})
@@ -24,32 +25,38 @@ console.log('Deals props', props)
                 map
                 { props.dealsReducer.deals.map( (deal) => {
                     
-                    return <p > {deal.customer_first} </p>
+                    return <p className='each-deal'> 
+                    {deal.leade_id} 
+                    {deal.customer_first}
+                    {deal.customer_last}
+                    {deal.purchase_total} </p>
                 }) }
             </div>
 
             <div className='deals-form'>
                 
-                <input placeholder='Lease ID'
-                    value={leaseId} 
-                    onChange={(e) => {setLeaseId(e.target.value)}} />
-                <input placeholder="Customer's First Name" 
-                    value={custFirst} 
-                    onChange={(e) => {setCustFirst(e.target.value)}}
-                 />
-                <input placeholder="Customer's Last Name"
-                    value={custLast}
-                    onChange={(e) => {setCustLast(e.target.value)}} />
-                
+                <div>
+                    <input placeholder='Lease ID'
+                        value={leaseId} 
+                        onChange={(e) => {setLeaseId(e.target.value)}} />
+                    <input placeholder="Customer's First Name" 
+                        value={custFirst} 
+                        onChange={(e) => {setCustFirst(e.target.value)}}
+                    />
+                    <input placeholder="Customer's Last Name"
+                        value={custLast}
+                        onChange={(e) => {setCustLast(e.target.value)}} />
+                </div>
                 
                 
                 <div>
                     <input placeholder='Purchase Total'
                         value={purchaseTotal}
                         onChange={(e) => {setPurchaseTotal(e.target.value)}} />
-                    <label for='month'></label>
-                    <select name='month' id='month'>
-                        <option>month...</option>
+                    
+                    <select value={month}
+                            onChange={(e) => {setMonth(e.target.value)}}>
+                        <option value=''>month...</option>
                         <option value='January'>january</option>
                         <option value='Febuary'>febuary</option>
                         <option value='March'>march</option>
@@ -66,7 +73,7 @@ console.log('Deals props', props)
                     <button onClick={ () => {
                     
                         // ADD INPUT FIELD BELOW ONCE CREATED
-                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal}).then(
+                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then(
                         (res) => {
                         props.setDeals(res.data)
                         axios.get('/auth/user').then((res) => {
