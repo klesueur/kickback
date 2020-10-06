@@ -41,7 +41,7 @@ function Deals(props) {
                 <h2 className ='your-deals'>Your Deals</h2>
                 { props.dealsReducer.deals.map( (deal) => {
                     
-                    return <div className='each-deal'> 
+                    return <div className='each-deal' > 
                         <div className='each-deal-left-portion'>
                             <p>{deal.lease_id}</p> 
                             <p className='customer-name'>{deal.customer_first} {deal.customer_last}</p>
@@ -60,6 +60,7 @@ function Deals(props) {
             <div className='deals-form'>
                 
                 <div className='input-fields'>
+                    <p className='add-new-deal'>add new deal:</p>
                     <div>
                         <input placeholder='Lease ID'
                         value={leaseId}

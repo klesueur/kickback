@@ -19,13 +19,13 @@ function AllMerch(props) {
         })
     }, [])
 
-    const addToCart = (id) => {
-        axios.post('/api/cart', {id}).then((res) => {
-            setCart({
-                cart: res.data
-            })
-        })
-    }
+    // const addToCart = (id) => {
+    //     axios.post('/api/cart', {id}).then((res) => {
+    //         setCart({
+    //             cart: res.data
+    //         })
+    //     })
+    // }
 
 
     
@@ -34,7 +34,7 @@ function AllMerch(props) {
     return (
         
         <div>
-            mapped all merch
+            <h1>reward yourself with swag!</h1>
             {allMerch.map((merch) => {
                 return <p>
                    <MerchItem key={merch.id} data={merch} />

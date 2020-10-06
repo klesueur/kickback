@@ -14,7 +14,7 @@ function MerchShop(props) {
             <Header />
 
             <div className='merch-shop'>
-                MERCH SHOP
+                
                 <AllMerch />
                 {/* <Cart /> */}
             </div>
