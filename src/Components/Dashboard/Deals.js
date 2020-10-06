@@ -16,7 +16,7 @@ function Deals(props) {
         value: ''
         },
       { label: "January", value: "January" },
-      { label: "Febuary", value: "Febuary" },
+      { label: "February", value: "February" },
       { label: "March", value: "March" },
       { label: "April", value: "April" },
       { label: "May", value: "May" },
@@ -34,19 +34,18 @@ function Deals(props) {
     }, [])
 
 
-console.log('Deals props', props)
+// console.log('Deals props', props)
     return(
-        <div>
+        <div className='dashboard-deals'>
             <div className='deals-display'>
-                list
-                map
+                <h1>Your Deals</h1>
                 { props.dealsReducer.deals.map( (deal) => {
                     
                     return <p className='each-deal'> 
                     {deal.lease_id} 
                     {deal.customer_first}
                     {deal.customer_last}
-                    {deal.purchase_total} </p>
+                    ${deal.purchase_total} </p>
                 }) }
             </div>
 
@@ -81,18 +80,23 @@ console.log('Deals props', props)
                         </option>
                     ))}
                     </select>
-                    <button onClick={ () => {
+
+                    <div className='add-deal-button'>
+                        <button onClick={ () => {
                     
                         // ADD INPUT FIELD BELOW ONCE CREATED
-                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then(
-                        (res) => {
-                        props.setDeals(res.data)
-                        axios.get('/auth/user').then((res) => {
-                        props.setUser(res.data)
-                        })
-                        }
-                        ).catch((err) => {console.log(err)})
-                    }}> Add New Deal </button>
+                            axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then(
+                            (res) => {
+                            props.setDeals(res.data)
+                            axios.get('/auth/user').then((res) => {
+                            props.setUser(res.data)
+                            })
+                            }
+                            ).catch((err) => {console.log(err)})
+                            }}> Add New Deal 
+                        </button>
+                    </div>
+
                 </div>
 
 

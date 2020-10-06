@@ -3,6 +3,17 @@ const getAllProduct = async (db) => {
     return product
 }
 
+const cart = { total: 0, items: [] }
+let cartId = 0
+
+const updateCartTotal = () => {
+    const total = cart.items.reduce((acc, element) => {
+      return acc + element.price * element.quantity
+    }, 0)
+  
+    cart.total = total.toFixed(2)
+  }
+
 
 module.exports = {
 
@@ -30,10 +41,21 @@ module.exports = {
 
     },
     
-    // getCart: async (req, res) => {
+    getCart: async (req, res) => {
 
+        res.status(200).send(req.session.cart)
 
+    },
 
+    // changeQuantity: async (req, res) => {
+    //     for changing quantity after adding to cart
     // },
+
+    checkout: (req, res) => {
+        cart.total = 0
+        cart.items = []
+        //NEED TO DEDUCT FROM SPIFF TOTAL, CODE HERE AND PULL UPDATE_SPIFF SOMEHOW
+        res.status(200).send(req.session.cart)
+    }
 
 }

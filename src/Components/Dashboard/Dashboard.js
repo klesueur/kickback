@@ -35,7 +35,7 @@ function Dashboard(props) {
 
                 </div>
                         
-                <div className='dashboard-deals'>
+                <div>
                     <Deals />
                 </div>  
 

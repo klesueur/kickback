@@ -70,12 +70,20 @@ module.exports = {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] 
         const result = months.map( async month => {
             let count = await db.get_by_month([month, id])
-            console.log(count)
-            return count
+            console.log('.map', count)
+            return count[0].count
         })
-        console.log(result)
+        let promise = await Promise.all(result)
+        console.log('let promise', promise)
+        res.status(200).send(promise)
         // const deals = await db.get_by_month(month, id)
-        res.status(200).send(result)
+        // console.log('before promise', Promise.resolve(result))
+        // Promise.resolve(result).then(() => {
+        //     console.log('promise.all', result)
+        //     console.log(result[0].count)
+        //     res.status(200).send(result)
+        // })
+        
 
     }
 

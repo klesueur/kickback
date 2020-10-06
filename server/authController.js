@@ -29,7 +29,7 @@ module.exports = {
         if (!existingUser) {
             return res.status(404).send('User not found. Please register.')
         }
-        console.log(existingUser)
+        
         const isAuthenticated = bcrypt.compareSync(password, existingUser.password)
         if (!isAuthenticated) {
             return res.status(403).send('Incorrect email or password')

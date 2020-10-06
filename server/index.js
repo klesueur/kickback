@@ -43,8 +43,11 @@ app.get('/api/merch', merchCtrl.getMerch)
 //#cart endpoints below (still part of merchController)
 //CODING CART ON FRONT END FOR PROJECT. NEED BELOW ENDPOINTS IN FUTURE WHEN APP IS LIVE. 
 //commented out getCart() in merchController
-// app.get('/api/cart', merchCtrl.getCart) 
-// app.post('/api/cart', merchCtrl.addToCart)
+app.get('/api/cart', merchCtrl.getCart) 
+app.post('/api/cart', merchCtrl.addToCart)
+// app.put('api/cart/:cart_id', merchCtrl.changeQuantity)
+// app.delete('/api/cart/:cart_id', merchCtrl.removeFromCart)
+app.delete('/api/cart', merchCtrl.checkout)
 
 
 
