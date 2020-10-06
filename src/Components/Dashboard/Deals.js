@@ -10,7 +10,24 @@ function Deals(props) {
     const [custFirst, setCustFirst] = useState('')
     const [custLast, setCustLast] = useState('')
     const [purchaseTotal, setPurchaseTotal] = useState('')
-    const [month, setMonth] = useState('')
+    const [month, setMonth] = useState([
+        {
+        label: 'month...',
+        value: ''
+        },
+      { label: "January", value: "January" },
+      { label: "Febuary", value: "Febuary" },
+      { label: "March", value: "March" },
+      { label: "April", value: "April" },
+      { label: "May", value: "May" },
+      { label: "June", value: "June" },
+      { label: "July", value: "July" },
+      { label: "August", value: "August" },
+      { label: "September", value: "September" },
+      { label: "October", value: "October" },
+      { label: "November", value: "November" },
+      { label: "December", value: "December" },
+    ])
 
     useEffect( () => {
         axios.get('/api/deals').then((res) => {props.setDeals(res.data)})
@@ -26,7 +43,7 @@ console.log('Deals props', props)
                 { props.dealsReducer.deals.map( (deal) => {
                     
                     return <p className='each-deal'> 
-                    {deal.leade_id} 
+                    {deal.lease_id} 
                     {deal.customer_first}
                     {deal.customer_last}
                     {deal.purchase_total} </p>
@@ -56,19 +73,13 @@ console.log('Deals props', props)
                     
                     <select value={month}
                             onChange={(e) => {setMonth(e.target.value)}}>
-                        <option value=''>month...</option>
-                        <option value='January'>january</option>
-                        <option value='Febuary'>febuary</option>
-                        <option value='March'>march</option>
-                        <option value='April'>april</option>
-                        <option value='May'>may</option>
-                        <option value='June'>june</option>
-                        <option value='July'>july</option>
-                        <option value='August'>august</option>
-                        <option value='September'>september</option>
-                        <option value='October'>october</option>
-                        <option value='November'>november</option>
-                        <option value='December'>december</option>
+                        {month.map(month => (
+                        <option
+                            key={month.value}
+                            value={month.value}>
+                            {month.label}
+                        </option>
+                    ))}
                     </select>
                     <button onClick={ () => {
                     
