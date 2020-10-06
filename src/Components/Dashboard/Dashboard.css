@@ -111,13 +111,12 @@
     
 }
 
-
 .deals-display {
     height: 60vh;
     width: 35vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     margin-top: 10px;
     border: 6px solid #3effdf;
@@ -128,7 +127,6 @@
     background-color: #1b1b1b;
     color: #3effdf;
     
-
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -138,11 +136,17 @@
         0 100px 80px rgba(0, 0, 0, 0.12)
 }
 
+.your-deals {
+    font-size: 25px;
+    color: #ff8b1e;
+    padding: 15px;
+}
+
 .deals-form {
     height: 10vh;
     width: 40vw;
     display: flex;
-    flex-direction: column;
+    
     justify-content: space-around;
     margin-bottom: 40px;
     border: 6px solid #3effdf;
@@ -153,7 +157,6 @@
     background-color: #1b1b1b;
     color: #3effdf;
     
-
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -163,13 +166,22 @@
         0 100px 80px rgba(0, 0, 0, 0.12)
 }
 
-.each-deal {
+.input-fields {
     display: flex;
-    
-    
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.each-deal {
+    height: 3.5vh;
+    width: 29vw;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    border: 2px solid #effffc;
-    border-radius: 3px;
+    padding: 0 10.4px;
+    margin-bottom: 11px;
+    border: 2px solid #b6c4c1;
+    border-radius: 2px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Oxygen-Sans, Ubuntu, Cantarell,
                "Helvetica Neue", sans-serif;
@@ -184,4 +196,27 @@
         0 22.3px 17.9px rgba(0, 0, 0, 0.072),
         0 41.8px 33.4px rgba(0, 0, 0, 0.086),
         0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+.each-deal-left-portion {
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+
+.customer-name {
+    padding-left: 25px;
+}
+
+.each-deal-right-portion {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.deal-edit-button {
+    border: none;
+    background: transparent;
+    color: #6b6b6b;
+    cursor: pointer;
 }

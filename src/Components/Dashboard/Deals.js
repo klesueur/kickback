@@ -38,50 +38,62 @@ function Deals(props) {
     return(
         <div className='dashboard-deals'>
             <div className='deals-display'>
-                <h1>Your Deals</h1>
+                <h2 className ='your-deals'>Your Deals</h2>
                 { props.dealsReducer.deals.map( (deal) => {
                     
-                    return <p className='each-deal'> 
-                    {deal.lease_id} 
-                    {deal.customer_first}
-                    {deal.customer_last}
-                    ${deal.purchase_total} </p>
+                    return <div className='each-deal'> 
+                        <div className='each-deal-left-portion'>
+                            <p>{deal.lease_id}</p> 
+                            <p className='customer-name'>{deal.customer_first} {deal.customer_last}</p>
+                        </div>
+                        <div className='each-deal-right-portion'>
+                            <p>${deal.purchase_total}</p>
+                            <button className='deal-edit-button'>
+                                {/* //THIS BUTTON IS NOT ACTIVE. NEEDS AXIOS.PUT REQUEST! */}
+                                edit
+                            </button>
+                        </div>
+                    </div>
                 }) }
             </div>
 
             <div className='deals-form'>
                 
-                <div>
-                    <input placeholder='Lease ID'
-                        value={leaseId} 
+                <div className='input-fields'>
+                    <div>
+                        <input placeholder='Lease ID'
+                        value={leaseId}
                         onChange={(e) => {setLeaseId(e.target.value)}} />
-                    <input placeholder="Customer's First Name" 
-                        value={custFirst} 
+                        <input placeholder="Customer's First Name"
+                        value={custFirst}
                         onChange={(e) => {setCustFirst(e.target.value)}}
-                    />
-                    <input placeholder="Customer's Last Name"
+                        />
+                        <input placeholder="Customer's Last Name"
                         value={custLast}
                         onChange={(e) => {setCustLast(e.target.value)}} />
-                </div>
-                
-                
-                <div>
-                    <input placeholder='Purchase Total'
+                    </div>
+                    
+                    
+                    <div>
+                        <input placeholder='Purchase Total'
                         value={purchaseTotal}
                         onChange={(e) => {setPurchaseTotal(e.target.value)}} />
-                    
-                    <select value={month}
-                            onChange={(e) => {setMonth(e.target.value)}}>
+                        
+                        <select value={month}
+                        onChange={(e) => {setMonth(e.target.value)}}>
                         {month.map(month => (
                         <option
-                            key={month.value}
-                            value={month.value}>
-                            {month.label}
+                        key={month.value}
+                        value={month.value}>
+                        {month.label}
                         </option>
-                    ))}
-                    </select>
+                        ))}
+                        </select>
+                     </div>
 
-                    <div className='add-deal-button'>
+                </div>
+
+                <div className='add-deal-button'>
                         <button onClick={ () => {
                     
                         // ADD INPUT FIELD BELOW ONCE CREATED
@@ -95,11 +107,7 @@ function Deals(props) {
                             ).catch((err) => {console.log(err)})
                             }}> Add New Deal 
                         </button>
-                    </div>
-
                 </div>
-
-
 
             </div>
 
