@@ -3,6 +3,7 @@ import './Header.css'
 import {connect} from 'react-redux'
 import {setUser, logoutUser} from '../ducks/authReducer'
 import {withRouter} from 'react-router-dom'
+// import kickback from './output-onlinepngtools.png'
 
 
 function Header(props) {
@@ -17,6 +18,7 @@ function Header(props) {
             <div className='header-content'>
                 <div className='kickback-and-nav'>
                         <p className='dash-kickback'>kickback</p>
+                        {/* <img src={kickback}/> */}
                     <div className='nav-buttons'>
                         <a className='dashboard-button'
                         onClick={() => {props.history.push('/dashboard')}}> Dashboard </a>

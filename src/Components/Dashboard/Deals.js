@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {setDeals} from '../../ducks/dealsReducer'
 import {setUser} from '../../ducks/authReducer'
+import { FiPlusSquare } from "react-icons/fi";
 
 function Deals(props) {
 
