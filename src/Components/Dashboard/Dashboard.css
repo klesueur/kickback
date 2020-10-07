@@ -32,12 +32,12 @@
     margin-top: 13.5px;
 
     box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
+        0 2.8px 2.2px rgba(0, 0, 0, 0.11),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.151),
+        0 12.5px 10px rgba(0, 0, 0, 0.192),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.158),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.178),
+        0 100px 80px rgba(0, 0, 0, 0.199)
 }
 
 .spiff-message {
@@ -68,12 +68,12 @@
     padding: 40px;
 
     box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
+        0 2.8px 2.2px rgba(0, 0, 0, 0.11),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.219),
+        0 12.5px 10px rgba(0, 0, 0, 0.226),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.233),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.233),
+        0 100px 80px rgba(0, 0, 0, 0.281)
 }
 
 .chartjs-display {
@@ -92,12 +92,12 @@
     margin-bottom: 13.5px;
 
     box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
+        0 2.8px 2.2px rgba(0, 0, 0, 0.11),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.219),
+        0 12.5px 10px rgba(0, 0, 0, 0.226),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.233),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.233),
+        0 100px 80px rgba(0, 0, 0, 0.281)
 }
 
 .dashboard-deals {
@@ -129,12 +129,12 @@
     color: #3effdf;
     
     box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
+        0 2.8px 2.2px rgba(0, 0, 0, 0.11),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.219),
+        0 12.5px 10px rgba(0, 0, 0, 0.226),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.233),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.233),
+        0 100px 80px rgba(0, 0, 0, 0.281)
 }
 
 .deals-display::-webkit-scrollbar {
@@ -174,19 +174,17 @@
     margin-bottom: 40px;
     border: 6px solid #3effdf;
     border-radius: 3px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-               "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     background-color: #1b1b1b;
     color: #3effdf;
     
     box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
+        0 2.8px 2.2px rgba(0, 0, 0, 0.11),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.219),
+        0 12.5px 10px rgba(0, 0, 0, 0.226),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.233),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.233),
+        0 100px 80px rgba(0, 0, 0, 0.281)
 }
 
 .add-new-deal {
@@ -259,12 +257,12 @@ select {
     
 
     box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
+        0 2.8px 2.2px rgba(0, 0, 0, 0.11),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.219),
+        0 12.5px 10px rgba(0, 0, 0, 0.226),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.233),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.233),
+        0 100px 80px rgba(0, 0, 0, 0.281)
 }
 
 .each-deal-left-portion {
