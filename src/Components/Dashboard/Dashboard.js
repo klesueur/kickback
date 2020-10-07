@@ -26,7 +26,7 @@ function Dashboard(props) {
                     </div>
                     
                     <div className='countdown-display'>
-                        22 Days Left
+                        22 days left
                     </div>
 
                     <div className='chartjs-display'>

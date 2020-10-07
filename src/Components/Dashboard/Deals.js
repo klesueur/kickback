@@ -49,9 +49,14 @@ function Deals(props) {
                         </div>
                         <div className='each-deal-right-portion'>
                             <p>${deal.purchase_total}</p>
-                            <button className='deal-edit-button'>
-                                {/* //THIS BUTTON IS NOT ACTIVE. NEEDS AXIOS.PUT REQUEST! */}
+                            <button         className='deal-edit-button'>
+                                {/* THIS BUTTON IS NOT ACTIVE. NEEDS AXIOS.PUT REQUEST! */}
                                 edit
+                            </button>
+                            <button
+                                className='deal-delete-button'>
+                                {/* THIS BUTTON IS NOT ACTIVE. NEEDS AXIOS.DELETE REQUEST! */}
+                                delete    
                             </button>
                         </div>
                     </div>
