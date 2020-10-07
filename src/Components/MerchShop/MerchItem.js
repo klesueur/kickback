@@ -11,10 +11,14 @@ function MerchItem(props) {
 
             <div className='item-description'>
 
-                <img src={props.data.img} 
+                <img className='product-img' src={props.data.img} 
                 width='190' height='175' />
-                <p>{props.data.name}</p>
-                <p>${props.data.price}</p>
+        
+
+                <p className='product-name'> {props.data.name}</p>
+                <p className='product-price'> ${props.data.price} </p>
+
+
 
             </div>
         )

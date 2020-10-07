@@ -27,14 +27,10 @@ function AllMerch(props) {
     //     })
     // }
 
-
-    
-    
-
     return (
         
-        <div>
-            <h1>reward yourself with swag!</h1>
+        <div className='all-merch-display'>
+            
             {allMerch.map((merch) => {
                 return <p>
                    <MerchItem key={merch.id} data={merch} />

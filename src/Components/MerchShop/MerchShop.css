@@ -1,4 +1,36 @@
 .merch-shop {
-    height: 85vh;
+    height: 100%;
     width: 100%;
 }
+
+.all-merch-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 14px;
+    background: rgb(88, 88, 88);
+    background: radial-gradient(circle, #ffee00 0%, #e29912 50%, #f57e0e 100%);
+}
+
+.item-description {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product-img {
+    padding: 15px;
+    background-color: #ffffff;
+    
+}
+
+/* .product-description {
+    background-color: #ffffff;
+} */
+

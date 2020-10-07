@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {setDeals} from '../../ducks/dealsReducer'
 import {setUser} from '../../ducks/authReducer'
-import { FiPlusSquare } from "react-icons/fi";
+
 
 function Deals(props) {
 
@@ -64,15 +64,15 @@ function Deals(props) {
                     <p className='add-new-deal'>add new deal:</p>
                     <div>
                         <input placeholder='Lease ID'
-                        value={leaseId}
-                        onChange={(e) => {setLeaseId(e.target.value)}} />
-                        <input placeholder="Customer First Name"
-                        value={custFirst}
-                        onChange={(e) => {setCustFirst(e.target.value)}}
+                            value={leaseId}
+                            onChange={(e) => {setLeaseId(e.target.value)}} />
+                        <input placeholder="First Name"
+                            value={custFirst}
+                            onChange={(e) => {setCustFirst(e.target.value)}}
                         />
                         <input placeholder="Last Name"
-                        value={custLast}
-                        onChange={(e) => {setCustLast(e.target.value)}} />
+                            value={custLast}
+                            onChange={(e) => {setCustLast(e.target.value)}} />
                     </div>
                     
                     
@@ -85,9 +85,9 @@ function Deals(props) {
                             onChange={(e) => {setMonth(e.target.value)}}>
                             {month.map(month => (
                             <option
-                            key={month.value}
-                            value={month.value}>
-                            {month.label}
+                                key={month.value}
+                                value={month.value}>
+                                {month.label}
                             </option>
                             ))}
                         </select>
@@ -95,10 +95,10 @@ function Deals(props) {
 
                 </div>
 
-                <div className='add-deal-button'>
-                    <button onClick={ () => {
-                    
-                    // ADD INPUT FIELD BELOW ONCE CREATED
+                <div >
+                    <button className='add-deal-button'
+                     // ADD INPUT FIELD BELOW ONCE CREATED
+                    onClick={ () => {
                         axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then((res) => {
                         props.setDeals(res.data)
                         axios.get('/auth/user').then((res) => {

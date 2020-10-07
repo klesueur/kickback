@@ -3,7 +3,7 @@
     width: 100%;
     /* background-color: rgb(99, 99, 99); */
     background: rgb(88, 88, 88);
-    background: radial-gradient(circle, rgb(109, 109, 109) 0%, rgb(83, 83, 83) 100%);
+    background: radial-gradient(circle, rgb(128, 128, 128) 0%, rgb(83, 83, 83) 100%);
     display: flex;
     justify-content: space-around;
 }
@@ -210,11 +210,14 @@ input {
     margin: 4px;
 }
 
-option {
+select {
     letter-spacing: 2px;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 5px;
 }
 
-button {
+.add-deal-button {
     color: #ff8b1e;
     margin-top: 30px;
     margin-right: 10px;
@@ -225,9 +228,10 @@ button {
     letter-spacing: 1.75px;
 }
 
-button:hover {
+.add-deal-button:hover {
     color: #ff7b00;
     border: 3px solid #ff7b00;
+    border-radius: 3px;
     transition-duration: .2s;
       -webkit-transition-duration: .2s;
       -moz-transition-duration: .2s;
@@ -280,5 +284,15 @@ button:hover {
     border: none;
     background: transparent;
     color: #6b6b6b;
+    cursor: pointer;
+}
+
+.deal-edit-button:hover {
+    color: #ff7b00;
+    border: 1.5px solid #ff7b00;
+    border-radius: 3px;
+    transition-duration: .2s;
+      -webkit-transition-duration: .2s;
+      -moz-transition-duration: .2s;
     cursor: pointer;
 }
