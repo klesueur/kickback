@@ -9,8 +9,8 @@ function Cart() {
 
 
     return (
-        <div>
-
+        <div className='cart-view'>
+            IMMA CART
         </div>
     )
 }

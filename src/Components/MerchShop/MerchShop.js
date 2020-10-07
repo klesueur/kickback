@@ -16,6 +16,7 @@ function MerchShop(props) {
             <div className='merch-shop'>
                 
                 <AllMerch />
+                {/* CART BELOW UNDER CONSTRUCTION! */}
                 {/* <Cart /> */}
             </div>
             

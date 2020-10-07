@@ -1,6 +1,8 @@
 .merch-shop {
     height: 100%;
     width: 100%;
+    display: flex;
+
 }
 
 .all-merch-display {
@@ -58,12 +60,22 @@
     /* padding: 5px; */
 }
 
+.product-name {
+    padding: 4px;
+}
+
+.product-price {
+    margin: 10px;
+    padding: 4px;
+}
+
 .add-to-cart-button {
     border: none;
     background: transparent;
     color: #ff7b00;
     letter-spacing: 1px;
     cursor: pointer;
+    padding: 4px;
 }
 
 .add-to-cart-button:hover {
@@ -75,4 +87,9 @@
       -webkit-transition-duration: .2s;
       -moz-transition-duration: .2s;
     cursor: pointer;
+}
+
+.cart-view {
+    width: 75vw;
+    
 }
