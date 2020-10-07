@@ -66,11 +66,11 @@ function Deals(props) {
                         <input placeholder='Lease ID'
                         value={leaseId}
                         onChange={(e) => {setLeaseId(e.target.value)}} />
-                        <input placeholder="Customer's First Name"
+                        <input placeholder="Customer First Name"
                         value={custFirst}
                         onChange={(e) => {setCustFirst(e.target.value)}}
                         />
-                        <input placeholder="Customer's Last Name"
+                        <input placeholder="Last Name"
                         value={custLast}
                         onChange={(e) => {setCustLast(e.target.value)}} />
                     </div>
@@ -78,37 +78,34 @@ function Deals(props) {
                     
                     <div>
                         <input placeholder='Purchase Total'
-                        value={purchaseTotal}
-                        onChange={(e) => {setPurchaseTotal(e.target.value)}} />
+                            value={purchaseTotal}
+                            onChange={(e) => {setPurchaseTotal(e.target.value)}} />
                         
                         <select value={month}
-                        onChange={(e) => {setMonth(e.target.value)}}>
-                        {month.map(month => (
-                        <option
-                        key={month.value}
-                        value={month.value}>
-                        {month.label}
-                        </option>
-                        ))}
+                            onChange={(e) => {setMonth(e.target.value)}}>
+                            {month.map(month => (
+                            <option
+                            key={month.value}
+                            value={month.value}>
+                            {month.label}
+                            </option>
+                            ))}
                         </select>
                      </div>
 
                 </div>
 
                 <div className='add-deal-button'>
-                        <button onClick={ () => {
+                    <button onClick={ () => {
                     
-                        // ADD INPUT FIELD BELOW ONCE CREATED
-                            axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then(
-                            (res) => {
-                            props.setDeals(res.data)
-                            axios.get('/auth/user').then((res) => {
-                            props.setUser(res.data)
-                            })
-                            }
-                            ).catch((err) => {console.log(err)})
-                            }}> Add New Deal 
-                        </button>
+                    // ADD INPUT FIELD BELOW ONCE CREATED
+                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then((res) => {
+                        props.setDeals(res.data)
+                        axios.get('/auth/user').then((res) => {
+                        props.setUser(res.data)}) }
+                        ).catch((err) => {console.log(err)})
+                        }}> add 
+                    </button>
                 </div>
 
             </div>

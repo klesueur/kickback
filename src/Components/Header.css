@@ -8,7 +8,7 @@
 
 .logo {
     height: 15vh;
-    width: 15vw;
+    width: 175px;
     background-image: linear-gradient(to top left,#8bffec  0%,  #44fcdd  50%,  #12ffd8 100%);
 }
 
@@ -34,7 +34,7 @@
     font-size: 64px;
     letter-spacing: 0.2em;
     font-family: "Gill Sans", sans-serif;
-    background: -webkit-linear-gradient(#ffe600, #f57e0e);
+    background: -webkit-linear-gradient(#ffae00, #f57e0e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     

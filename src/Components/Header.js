@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {setUser, logoutUser} from '../ducks/authReducer'
 import {withRouter} from 'react-router-dom'
 // import kickback from './output-onlinepngtools.png'
+import stripes from './kickback corner logo.png'
 
 
 function Header(props) {
@@ -12,7 +13,8 @@ function Header(props) {
         <div className='header'>
 
             <div className='logo'>
-                //logo here
+                <img src={stripes} 
+                height='140px' width='175' />
             </div>
             
             <div className='header-content'>
