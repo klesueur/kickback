@@ -56,7 +56,7 @@ module.exports = {
         await db.delete_deal([deal_id])
         await db.update_spiff(id, -15)
         //Send back updated array
-        const deals = await getAllDeals(db)
+        const deals = await getAllDeals(db, id)
         res.status(200).send(deals)
 
     },

@@ -65,8 +65,17 @@ function Deals(props) {
                                 edit
                             </button>
                             <button
-                                className='deal-delete-button'>
-                                {/* THIS BUTTON IS NOT ACTIVE. NEEDS AXIOS.DELETE REQUEST! */}
+                                className='deal-delete-button'onClick={ () => {
+                                    axios.delete(`/api/deals/${deal.deal_id}`).then((res) => {
+                                        console.log('setDeals', res.data)
+                                        props.setDeals(res.data)
+
+                                        axios.get('/auth/user').then((results) => {
+                                            props.setUser(results.data)
+                                        })
+                                    })
+                                }} >
+                                
                                 delete    
                             </button>
                         </div>
@@ -118,9 +127,9 @@ function Deals(props) {
                     onClick={ () => {
                         axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, month: selectedMonth}).then((res) => {
                         props.setDeals(res.data)
-                        axios.get('/auth/user').then((res) => {
+                        axios.get('/auth/user').then((results) => {
                             resetFields()
-                        props.setUser(res.data)}) }
+                        props.setUser(results.data)}) }
                         ).catch((err) => {console.log(err)})
                         }}> add 
                     </button>
