@@ -16,7 +16,8 @@ function Auth(props) {
         <div>
             <div className='auth-view'>
                 <div className='login-box'>
-                    {isRegistered ? <Register /> : <Login setIsRegistered={setIsRegistered} />}
+                    {isRegistered ? <Register setIsRegistered={setIsRegistered}/> : 
+                    <Login setIsRegistered={setIsRegistered} />}
                 </div>
             </div>
         </div>

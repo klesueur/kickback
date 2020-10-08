@@ -60,7 +60,7 @@ function Register(props) {
                         <button 
                         //button is broken
                         className='reg-register-button' 
-                        onClick={ () => {props.isRegistered(false)}}>back to login</button>
+                        onClick={ () => {props.setIsRegistered(false)}}>back to login</button>
 
                     {/* </div> */}
                 </div>  

@@ -12,6 +12,7 @@ function Deals(props) {
     const [custLast, setCustLast] = useState('')
     const [purchaseTotal, setPurchaseTotal] = useState('')
     const [month, setMonth] = useState([
+        
         {
         label: 'month...',
         value: ''
@@ -29,10 +30,20 @@ function Deals(props) {
       { label: "November", value: "November" },
       { label: "December", value: "December" },
     ])
+   
+    const [selectedMonth, setSelectedMonth] = useState('')
 
     useEffect( () => {
         axios.get('/api/deals').then((res) => {props.setDeals(res.data)})
     }, [])
+
+    const resetFields = () => {
+        setSelectedMonth('')
+        setPurchaseTotal('')
+        setLeaseId('')
+        setCustFirst('')
+        setCustLast('')
+    }
 
 
 // console.log('Deals props', props)
@@ -86,8 +97,9 @@ function Deals(props) {
                             value={purchaseTotal}
                             onChange={(e) => {setPurchaseTotal(e.target.value)}} />
                         
-                        <select value={month}
-                            onChange={(e) => {setMonth(e.target.value)}}>
+                        <select value={selectedMonth}
+                            onChange={(e) => {setSelectedMonth(e.target.value)}}>
+
                             {month.map(month => (
                             <option
                                 key={month.value}
@@ -104,9 +116,10 @@ function Deals(props) {
                     <button className='add-deal-button'
                      // ADD INPUT FIELD BELOW ONCE CREATED
                     onClick={ () => {
-                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, }).then((res) => {
+                        axios.post('/api/deals', {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, month: selectedMonth}).then((res) => {
                         props.setDeals(res.data)
                         axios.get('/auth/user').then((res) => {
+                            resetFields()
                         props.setUser(res.data)}) }
                         ).catch((err) => {console.log(err)})
                         }}> add 
