@@ -68,7 +68,7 @@ class Graph extends Component {
 
     componentDidUpdate(prev) {
         // console.log('prev', prev)
-        if(prev && prev.user.spiff !== this.props.user.spiff){
+        if(prev && prev.deals !== this.props.deals){
             this.getData()
         }
     } 
@@ -119,5 +119,5 @@ class Graph extends Component {
     }
 }
 
-const mapStateToProps = (store) => store.authReducer
+const mapStateToProps = (store) => store.dealsReducer
 export default connect(mapStateToProps)(Graph)

@@ -30,8 +30,9 @@ function Deals(props) {
       { label: "November", value: "November" },
       { label: "December", value: "December" },
     ])
-   
     const [selectedMonth, setSelectedMonth] = useState('')
+    const [isEditing, setIsEditing] = useState(false)
+    const [deal_id, setDeal_id] = useState('')
 
     useEffect( () => {
         axios.get('/api/deals').then((res) => {props.setDeals(res.data)})
@@ -60,8 +61,17 @@ function Deals(props) {
                         </div>
                         <div className='each-deal-right-portion'>
                             <p>${deal.purchase_total}</p>
-                            <button         className='deal-edit-button'>
-                                {/* THIS BUTTON IS NOT ACTIVE. NEEDS AXIOS.PUT REQUEST! */}
+                            <button className='deal-edit-button'
+                                onClick={() => {
+                                    setIsEditing(true)
+                                    setSelectedMonth(deal.month)
+                                    setPurchaseTotal(deal.purchase_total)
+                                    setLeaseId(deal.lease_id)
+                                    setCustFirst(deal.customer_first)
+                                    setCustLast(deal.customer_last)
+                                    setDeal_id(deal.deal_id)
+                                }}>
+                                
                                 edit
                             </button>
                             <button
@@ -122,6 +132,21 @@ function Deals(props) {
                 </div>
 
                 <div >
+                    {isEditing ? <button className='add-deal-button'
+                        onClick={() => {
+                            axios.put(`/api/deals/${deal_id}`, {lease_id: leaseId, customer_first: custFirst, customer_last: custLast, purchase_total: purchaseTotal, month: selectedMonth}).then((res) => {
+                                props.setDeals(res.data)
+                                axios.get('/auth/user').then((results) => {
+                                    resetFields()
+                                    setIsEditing(false)
+                                props.setUser(results.data)}) }
+                                ).catch((err) => {console.log(err)})
+                        }}
+                    >save</button> 
+                    
+                    
+                    : 
+                    
                     <button className='add-deal-button'
                      // ADD INPUT FIELD BELOW ONCE CREATED
                     onClick={ () => {
@@ -132,7 +157,7 @@ function Deals(props) {
                         props.setUser(results.data)}) }
                         ).catch((err) => {console.log(err)})
                         }}> add 
-                    </button>
+                    </button>} 
                 </div>
 
             </div>

@@ -35,13 +35,14 @@ module.exports = {
 
         const db = req.app.get('db')
         //Get info from body
-        const { purchase_total } = req.body
+        const { lease_id, customer_first, customer_last, purchase_total, month } = req.body
+        const { id } = req.session.user
         //Get deal_id from params
         const { deal_id } = req.params
         //Save updated deal
-        await db.edit_deal([purchase_total, deal_id])
+        await db.edit_deal([lease_id, customer_first, customer_last, purchase_total, month, deal_id])
         //Send array of deals
-        const deals = await getAllDeals(db)
+        const deals = await getAllDeals(db, id)
         res.status(200).send(deals)
 
     },
