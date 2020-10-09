@@ -1,4 +1,6 @@
 const bcrypt = require('bcryptjs')
+const nodemailer = require('nodemailer')
+require('dotenv').config()
 
 module.exports = {
 
@@ -16,6 +18,36 @@ module.exports = {
         req.session.user = newUser
 
         // Send confirmation email here? nodeMailer
+        //creating reusable transporter object using default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: 'smtp.gmail.com',
+            secure: false,
+            port: 587,
+            auth: {
+                // user: `${process.env.REACT_APP_GMAIL_ACCOUNT}`,
+                // pass: `${process.env.REACT_APP_GMAIL_PASSWORD}`
+                user: "austin.randall.47@gmail.com",
+                pass: "niavrxjehepekjur"
+            },
+            
+        })
+
+        let HelperOptions = {
+            from: '"Kickback" <kara.lesueur@gmail.com>',
+            to: `${email}`,
+            subject: 'Kickback Registration',
+            html:
+                `<div> Name: ${first} ${last} <br/> Company: ${company} <br/> Email: ${email} </div>`
+        }
+
+        //send mail with defined transport object
+        transporter.sendMail(HelperOptions, (error, info) => {
+            if(error) {
+                return console.log('this is an error', error)
+            }
+            // return res.status(200).send('All set to start earning kickback!')
+            console.log('mail sent')
+        })
 
         res.status(200).send(req.session.user)
         

@@ -5,6 +5,7 @@ const massive = require('massive')
 const authCtrl = require('./authController') 
 const dealsCtrl = require('./dealsController')
 const merchCtrl = require('./merchController')
+// const mailCtrl = require('./controllers/mailController')
 const verifyUser = require('./middlewares/verifyUser') 
 const path = require('path')
 
@@ -27,6 +28,9 @@ app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.delete('/auth/logout', authCtrl.logout)
 app.get('/auth/user', authCtrl.getUser)
+
+//#nodemailer endpoint
+// app.post('/api/send', authCtrl.mail)
 
 //#deals endpoints below
 app.get('/api/deals', verifyUser, dealsCtrl.getDeals)
