@@ -6,6 +6,7 @@ const authCtrl = require('./authController')
 const dealsCtrl = require('./dealsController')
 const merchCtrl = require('./merchController')
 const verifyUser = require('./middlewares/verifyUser') 
+const path = require('path')
 
 const app = express()
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
@@ -49,6 +50,11 @@ app.post('/api/cart', merchCtrl.addToCart)
 // app.delete('/api/cart/:cart_id', merchCtrl.removeFromCart)
 app.delete('/api/cart', merchCtrl.checkout)
 
+//hosting
+app.use(express.static(__dirname + '/../build'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 
 massive({
@@ -59,4 +65,10 @@ massive({
     console.log("DB is connected, yo!")
     app.listen(SERVER_PORT, () => 
     console.log(`LISTENING ON PORT ${SERVER_PORT}!!!`))
+})
+
+//hosting
+app.use(express.static(__dirname + '/../build'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
 })
