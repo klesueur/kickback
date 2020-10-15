@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './Auth.css'
+import './Auth.scss'
 import {connect} from 'react-redux'
 import {setUser, logoutUser} from '../../ducks/authReducer'
 import Login from './Login'
